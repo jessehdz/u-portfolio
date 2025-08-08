@@ -1,9 +1,23 @@
-@mixin saira-header {
+@mixin saira-header-dark {
   font-family: "Saira", sans-serif;
   font-weight: 700;
+  color: $text-color-dark;
 }
 
-@mixin saira-text {
+@mixin saira-header-light {
+  font-family: "Saira", sans-serif;
+  font-weight: 700;
+  color: $text-color-light;
+}
+
+@mixin saira-text-dark {
   font-family: "Saira", sans-serif;
   font-weight: 400;
+  color: $text-color-dark;
+}
+
+@mixin saira-text-light {
+  font-family: "Saira", sans-serif;
+  font-weight: 400;
+  color: $text-color-light;
 }
