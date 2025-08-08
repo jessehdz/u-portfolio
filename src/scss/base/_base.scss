@@ -1,0 +1,7 @@
+#body {
+  margin: 0;
+  padding: 0;
+  @include saira-text-dark;
+  background-color: $background-color;
+  color: $text-color-dark;
+}
