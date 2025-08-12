@@ -27,12 +27,12 @@
     }
     &-item {
       @include mixins.saira-text-dark;
-
-      &:hover {
-        color: variables.$secondary-color;
-        font-weight: bold;
-      }
     }
+  }
+
+  a:hover {
+    color: variables.$primary-color;
+    font-weight: bold;
   }
 }
 
