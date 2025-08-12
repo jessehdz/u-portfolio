@@ -1,0 +1,55 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+main {
+  padding: 2rem;
+
+  .main__container {
+    // background-color: white;
+    @include flex-center;
+    padding: 50px 0;
+    gap: 6rem;
+  }
+
+  .bio img {
+    width: 300px;
+    border-radius: 2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .latest-projects {
+    width: 300px;
+    height: 300px;
+    border-radius: 2%;
+    padding: 0.5rem;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    background-color: $background-color-dark;
+
+    &__title {
+      @include saira-header-light;
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    &__description {
+      @include saira-text-light;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    &__actions {
+      display: flex;
+      margin-top: 25px;
+      gap: 1rem;
+    }
+
+    &__btn--primary {
+      @include btn-primary;
+    }
+    &__btn--secondary {
+      @include btn-secondary;
+    }
+  }
+}
