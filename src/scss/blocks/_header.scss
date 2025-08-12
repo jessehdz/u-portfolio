@@ -1,0 +1,42 @@
+@use "../utils/variables";
+@use "../utils/mixins";
+
+.header {
+  @include mixins.saira-header-dark;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__logo img {
+    max-width: 50px;
+    height: auto;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+  }
+
+  &__nav {
+    &-list {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    &-item {
+      @include mixins.saira-text-dark;
+
+      &:hover {
+        color: variables.$secondary-color;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+a:link {
+  color: variables.$text-color-dark;
+  text-decoration: none;
+}
