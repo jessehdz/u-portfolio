@@ -23,3 +23,15 @@
   font-weight: 400;
   color: $text-color-light;
 }
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between($align: center) {
+  display: flex;
+  justify-content: space-between;
+  align-items: $align;
+}
