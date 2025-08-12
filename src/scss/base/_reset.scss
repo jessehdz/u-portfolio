@@ -1,0 +1,9 @@
+@use "../utils/mixins";
+@use "../utils/variables" as *;
+
+#body {
+  margin: 0;
+  padding: 0;
+  @include mixins.saira-text-dark;
+  background-color: $background-color;
+}
