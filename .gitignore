@@ -1,0 +1,12 @@
+# Ignore node_modules folder
+node_modules/
+
+# Ignore specific file/s
+.DS_Store
+
+# Ignore everything in a folder
+.vscode/
+img/
+
+# Ignore only a specific file in dist
+dist/main.css.map
