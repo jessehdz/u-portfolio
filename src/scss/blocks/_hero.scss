@@ -5,27 +5,36 @@ main {
   padding: 2rem;
 
   .main__container {
-    // background-color: white;
-    @include flex-center;
     padding: 50px 0;
     gap: 6rem;
+    // outline: auto;
   }
 
-  .bio img {
-    width: 300px;
-    border-radius: 2%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .latest-projects {
-    width: 300px;
-    height: 300px;
-    border-radius: 2%;
-    padding: 0.5rem;
-    @include flex-center;
-    flex-direction: column;
-    text-align: center;
+  #bio {
     background-color: $background-color-dark;
+    border-radius: 6px;
+    padding: 2rem;
+    @include flex-center;
+    margin: 0 auto;
+    gap: 4rem;
+  }
+
+  .bio {
+    &__pic img {
+      width: 300px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px #0000001a;
+    }
+
+    &__intro {
+      width: 400px;
+      height: 300px;
+      border-radius: 2%;
+      @include flex-center;
+      flex-direction: column;
+      text-align: center;
+      // outline: white solid 0.3px;
+    }
 
     &__title {
       @include saira-header-light;
