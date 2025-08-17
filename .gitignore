@@ -1,12 +1,15 @@
-# Ignore node_modules folder
+# dependencies
 node_modules/
 
-# Ignore specific file/s
-.DS_Store
-
-# Ignore everything in a folder
-.vscode/
+# build output
+dist/*.map
 img/
 
-# Ignore only a specific file in dist
-dist/main.css.map
+# temp files
+src/scss/main.css
+src/scss/main.css.map
+src/scss/main.scss
+
+# system files
+.vscode/
+.DS_Store
