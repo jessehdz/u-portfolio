@@ -1,64 +1,81 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins" as *;
 
-main {
+.bio {
   padding: 2rem;
+  background-color: $background-color-dark;
+  border-radius: 6px;
 
-  .main__container {
-    padding: 50px 0;
-    gap: 6rem;
-    // outline: auto;
-  }
-
-  #bio {
-    background-color: $background-color-dark;
-    border-radius: 6px;
-    padding: 2rem;
+  &__inner {
     @include flex-center;
-    margin: 0 auto;
-    gap: 4rem;
+    flex-direction: column; //mobile: stacked
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+
+    @media (min-width: 760px) {
+      flex-direction: row; //desktop: side by side
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+    }
   }
 
-  .bio {
-    &__pic img {
-      width: 300px;
+  &__pic {
+    max-width: 300px;
+    width: 100%;
+
+    img {
+      width: 100%;
       border-radius: 50%;
       box-shadow: 0 4px 8px #0000001a;
     }
-
-    &__intro {
-      width: 400px;
-      height: 300px;
-      border-radius: 2%;
-      @include flex-center;
-      flex-direction: column;
-      text-align: center;
-      // outline: white solid 0.3px;
-    }
-
-    &__title {
-      @include saira-header-light;
-      font-size: 2rem;
-      margin: 0;
-    }
-
-    &__description {
-      @include saira-text-light;
-      font-size: 1.2rem;
-      margin: 1rem 0;
-    }
-
-    &__actions {
-      display: flex;
-      margin-top: 25px;
-      gap: 1rem;
-    }
-
-    &__btn--primary {
-      @include btn-primary;
-    }
-    &__btn--secondary {
-      @include btn-secondary;
-    }
   }
+
+  &__intro {
+    width: 400px;
+    height: 300px;
+    border-radius: 2%;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    // outline: white solid 0.3px;
+  }
+
+  &__title {
+    @include saira-header-light;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  &__description {
+    @include saira-text-light;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  &__actions {
+    display: flex;
+    margin-top: 25px;
+    gap: 1rem;
+  }
+
+  &__btn--primary {
+    @include btn-primary;
+  }
+  &__btn--secondary {
+    @include btn-secondary;
+  }
+
+  // // Responsive styles
+  // @media (min-width: 760px) {
+  //   .bio {
+  //     flex-direction: column;
+  //     align-items: center;
+  //   }
+
+  //   .bio__pic img {
+  //     margin-bottom: 1.5rem;
+  //   }
+  // }
 }
