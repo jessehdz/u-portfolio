@@ -33,49 +33,50 @@
   }
 
   &__intro {
-    width: 400px;
-    height: 300px;
-    border-radius: 2%;
-    @include flex-center;
-    flex-direction: column;
-    text-align: center;
-    // outline: white solid 0.3px;
+    max-width: 500px;
+    padding: 0 1rem;
+
+    @media (min-width: 760px) {
+      width: 400px;
+      height: 300px;
+      @include flex-center;
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   &__title {
     @include saira-header-light;
     font-size: 2rem;
-    margin: 0;
+    margin-bottom: 2rem;
   }
 
   &__description {
     @include saira-text-light;
     font-size: 1.2rem;
-    margin: 1rem 0;
+    line-height: 2rem;
   }
 
   &__actions {
     display: flex;
-    margin-top: 25px;
-    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3rem;
+    gap: 2rem;
+
+    @media (min-width: 760px) {
+      margin-top: 1.2rem;
+    }
   }
 
-  &__btn--primary {
-    @include btn-primary;
-  }
-  &__btn--secondary {
-    @include btn-secondary;
-  }
+  // Buttons
+  .btn {
+    &--primary {
+      @include btn-primary;
+    }
 
-  // // Responsive styles
-  // @media (min-width: 760px) {
-  //   .bio {
-  //     flex-direction: column;
-  //     align-items: center;
-  //   }
-
-  //   .bio__pic img {
-  //     margin-bottom: 1.5rem;
-  //   }
-  // }
+    &--secondary {
+      @include btn-secondary;
+    }
+  }
 }
