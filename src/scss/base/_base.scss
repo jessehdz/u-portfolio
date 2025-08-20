@@ -7,8 +7,13 @@
   padding: 0 30px;
 }
 
+.header__container {
+  padding: 0;
+}
 .main__container {
-  padding: 50px 0;
-  // gap: 6rem;
-  // outline: auto;
+  padding: 5px;
+
+  @media (min-width: 760px) {
+    padding: 50px 0;
+  }
 }
