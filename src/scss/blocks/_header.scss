@@ -2,48 +2,122 @@
 @use "../utils/mixins";
 
 .header {
+  padding: 1.2rem 1rem 1rem 1rem;
+
+  @media (min-width: 760px) {
+    padding: 1rem;
+  }
+
   &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include mixins.flex-between;
     height: 80px;
   }
 
-  &__logo img {
-    max-width: 50px;
-    height: auto;
-    justify-content: center;
-    align-content: center;
-    display: flex;
+  &__logo {
+    img {
+      max-height: 50px;
+    }
+  }
+
+  &__nav-toggle-checkbox {
+    display: none;
+  }
+
+  &__nav-toggle-open {
+    display: block;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+
+    img {
+      max-height: 38px;
+    }
+
+    @media (min-width: 760px) {
+      display: none;
+    }
+  }
+
+  &__nav-toggle-close {
+    align-self: flex-end;
+    padding: 1rem;
+    cursor: pointer;
+    display: block;
+
+    img {
+      max-height: 38px;
+    }
+
+    @media (min-width: 760px) {
+      display: none;
+    }
   }
 
   &__nav {
-    &-list {
-      display: flex;
-      list-style: none;
-      gap: 1.2rem;
-    }
-    &-item {
-      @include mixins.saira-text-dark;
+    position: fixed;
+    top: 1rem;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background-color: variables.$background-color-light;
+    z-index: 2000;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media (min-width: 760px) {
+      position: static;
+      height: auto;
+      width: auto;
+      box-shadow: none;
+      background: transparent;
     }
   }
 
-  a:hover {
+  &__nav-list {
+    display: flex;
+    flex-direction: column; //mobile: stacked
+    gap: 1rem;
+    text-align: right;
+    background-color: variables.$background-color-light;
+    padding: 1rem;
+    margin: 0;
+    list-style: none;
+
+    @media (min-width: 760px) {
+      flex-direction: row; //desktop: side by side
+      padding: 0;
+      gap: 2rem;
+    }
+  }
+
+  &__nav-toggle-checkbox:checked + .header__nav-toggle-open {
+    display: none;
+  }
+
+  &__nav-toggle-checkbox:checked + .header__nav-toggle-open + .header__nav {
+    right: 0;
+  }
+
+  &__nav-item a {
+    text-decoration: none;
+    @include mixins.saira-text-dark;
+
+    &:hover,
+    &:focus {
+      color: variables.$primary-color;
+      font-weight: bold;
+    }
+  }
+
+  &__nav-item--active a {
     color: variables.$primary-color;
     font-weight: bold;
-  }
-
-  // Responsive styles
-  @media (max-width: 760px) {
-    &__nav-list {
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: center;
-    }
   }
 }
 
 a:link {
-  color: variables.$text-color-dark;
   text-decoration: none;
+  color: variables.$text-color-dark;
 }
