@@ -27,15 +27,21 @@
         /></a>
 
         <!-- Navigation -->
-        <button
-          class="header__nav-toggle"
-          aria-label="Toggle Navigation"
-          aria-expanded="false"
-          aria-controls="main-nav"
-          aria-haspopup="true" >
-          <img src="img/menu-icon.png" alt="Menu Icon" />
-        </button>
+        <!-- Nav Toggle -->
+        <input type="checkbox" class="header__nav-toggle-checkbox" id="nav-toggle" />
+
+        <!-- Open Nav Toggle Icon -->
+        <label for="nav-toggle" class="header__nav-toggle-open">
+          <img src="img/menu-icon.png" alt="Menu Icon" aria-label="Toggle Navigation Open" />
+        </label>
+
+        <!-- Nav List -->
         <nav class="header__nav" aria-label="Main Navigation">
+
+          <!-- Close Nav Toggle Icon -->
+          <label for="nav-toggle" class="header__nav-toggle-close">
+            <img src="img/menu-icon-close.png" alt="Close Menu Icon" aria-label="Toggle Navigation Close" />
+          </label>
           <ul class="header__nav-list">
             <li class="header__nav-item">
               <a href="#bio">Scouting Report</a>
@@ -90,7 +96,9 @@
 
     <!-- Footer -->
     <footer class="footer">
+      <!-- Icon Attribution -->
       <a href="https://www.flaticon.com/free-icons/sport" title="sport icons">Sport icons created by Gregor Cresnar - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/foul" title="foul icons">Foul icons created by Leremy - Flaticon</a>
     </footer>
   </body>
 </html>
